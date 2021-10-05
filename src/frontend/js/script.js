@@ -120,10 +120,10 @@ const userJson = {
 a partir dele iremos carregar as informações na pagina. No caso desse bloco de função, irá realizar o carregamento
 da imagem e nome de usuario no menu lateral.*/
 function carregarMenuLateral() {
-    const avatar = document.getElementById("avatar");
-    const nomeUsuario = document.getElementById("nome-usuario");
-    avatar.setAttribute("src", userJson.user.img);
-    nomeUsuario.innerHTML += userJson.user.nome;
+    const avatar = document.querySelectorAll("#avatar");
+    const nomeUsuario = document.querySelectorAll("#nome-usuario");
+    avatar.forEach(avatar=>avatar.setAttribute("src", userJson.user.img));
+    nomeUsuario.forEach(nomeUsuario=>nomeUsuario.innerHTML += userJson.user.nome);
 }
 carregarMenuLateral();
 /*--------------------------------------------------------------------*/
@@ -155,8 +155,8 @@ function carregarCards() {
                 <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, obcaecati.</h5>
             </div>
             <div class="acoes">
-                <button>Cuidar</button>
-                <button>Editar</button>
+                <a href="cuidar.html"><button>Cuidar</button></a>
+                <a href="cuidar.html"><button>Editar</button></a>
             </div>
         </article>
         `
@@ -173,5 +173,8 @@ function carregarCards() {
     }
 
 }
-carregarCards();
+if(window.location.href.split('/').slice(-1) == "main.html"){
+    carregarCards();
+}
+
 /*--------------------------------------------------------------------*/

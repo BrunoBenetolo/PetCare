@@ -288,6 +288,9 @@ button {
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 'area area area'
+                         'area area area'
+    ;
     gap: 1rem;
     width: calc(100% - 250px);
     height: 100%;
@@ -334,12 +337,16 @@ button {
     justify-content: space-between;
 }
 
-.card-pet .acoes button {
+.card-pet .acoes a {
     width: 44%;
     height: 60%;
     font-size: 1.2rem;
 }
-
+.card-pet .acoes a button {
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+}
 .card-add{
     background-color: #8766A4;
     display: flex;
@@ -375,6 +382,90 @@ button {
     cursor: pointer;
 }
 
+.painel-secundario{
+    background-color: #fff;
+    grid-area: area;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.nav-tabs{
+    width: 100%;
+    height: 80px;
+    background-color: #F5F5F5;
+}
+.nav-tabs ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+.nav-tabs ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* width: 33.3%; */
+    height: 100%;
+    cursor: pointer;
+}
+.nav-tabs ul li label{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+
+    cursor: pointer;
+}
+
+.nav-tabs .tabs{
+    display: none;
+}
+.nav-tabs .tabs:checked ~ label{
+    background-color: #fff;
+}
+.nav-tabs .content{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+}
+.nav-tabs .tabs:checked ~ .content{
+    display: flex;
+}
+.nav-tabs a, a:visited{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right:0px;
+    top:0px;
+    text-decoration: none;
+}
+.nav-tabs a:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right:0px;
+    top:0px;
+}
 
 @media screen and (max-width:425px) {
     .navbar {
